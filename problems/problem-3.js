@@ -29,6 +29,9 @@ const isEven = number => number % 2 === 0 // returns true if the number is even
 
 const numbers = [ -10, -5, 0, 5, 10, 8, -2 ]
 
-const numberStrings = numbers // append your array methods here
+const numberStrings = numbers
+  .filter(number => number > 0) // Remove zeros and negative numbers
+  .sort((a, b) => a - b) // Order the remaining numbers from smallest to largest
+  .map(number => `${number} is ${isEven(number) ? 'even' : 'odd'}`);
 
 test("Problem 3", numberStrings)
